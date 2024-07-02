@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
+<<<<<<< HEAD
+  productGUID: 10d27a336fc184af193839ca4e914ece
+=======
   productGUID: 0191e451f6a2743429aff3381e25fe7f
+>>>>>>> dev
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
+  productName: ICCAS Project
+=======
   productName: Wonder Land
+>>>>>>> dev
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -76,7 +84,10 @@ PlayerSettings:
   androidMinimumWindowWidth: 400
   androidMinimumWindowHeight: 300
   androidFullscreenMode: 1
+<<<<<<< HEAD
+=======
   androidAutoRotationBehavior: 1
+>>>>>>> dev
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
   runInBackground: 0
@@ -137,8 +148,11 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
+<<<<<<< HEAD
+=======
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
+>>>>>>> dev
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
@@ -629,14 +643,22 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< HEAD
+  metroPackageName: ICCAS Project
+=======
   metroPackageName: Wonder Land
+>>>>>>> dev
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
+  metroApplicationDescription: ICCAS Project
+=======
   metroApplicationDescription: Wonder Land
+>>>>>>> dev
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -650,7 +672,10 @@ PlayerSettings:
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
   metroSplashScreenUseBackgroundColor: 0
+<<<<<<< HEAD
+=======
   syncCapabilities: 0
+>>>>>>> dev
   platformCapabilities: {}
   metroTargetDeviceFamilies: {}
   metroFTAName: 
@@ -705,11 +730,19 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
+<<<<<<< HEAD
+  cloudProjectId: 6acbb0ac-dbdc-48cf-bbef-3381959a8db9
+  framebufferDepthMemorylessMode: 0
+  qualitySettingsNames: []
+  projectName: ICCAS Project
+  organizationId: star135513
+=======
   cloudProjectId: 1c50cd50-0347-4b6e-b09a-7c56e9932aa7
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Wonder Land
   organizationId: cksdud7890
+>>>>>>> dev
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
