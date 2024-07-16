@@ -1166,6 +1166,7 @@ MonoBehaviour:
   errorText: {fileID: 0}
   heartText: {fileID: 0}
   itemId: i101
+  priceTag: {fileID: 0}
 --- !u!114 &5595835580678522546
 MonoBehaviour:
   m_ObjectHideFlags: 0

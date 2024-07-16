@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class LobbyScenario : MonoBehaviour
 {
+    
     [SerializeField]
     private UserInfo user;
 
-    // ·Îµù ¿Ï·á ÈÄ »ç¶óÁú UI
+    // ï¿½Îµï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ UI
     public GameObject[] circles = new GameObject[3];
     public GameObject logoPanel;
-    // ·Îµù ¿Ï·á ÈÄ µîÀåÇÒ Object
+    // ï¿½Îµï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Object
     public GameObject sceneGroup;
 
     private void Update()
     {
-        // ·Îµù ¿Ï·á ÃßÀû
+        // ï¿½Îµï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (!Loading.isLoading)
         {
-            // ·Îµù ¿Ï·áµÇ¸é UI »ç¶óÁö°ÔÇÏ±â
+            // ï¿½Îµï¿½ ï¿½Ï·ï¿½Ç¸ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
             StartCoroutine(AfterLoading());
         }
     }
@@ -31,7 +32,8 @@ public class LobbyScenario : MonoBehaviour
 
     private void Start()
     {
-        BackendGameData.Instance.GameDataLoad();   
+        BackendGameData.Instance.GameDataLoad();
+        
     }
 
     IEnumerator FadeUI(float duration, float targetAlpha, CanvasGroup ui)

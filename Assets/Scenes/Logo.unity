@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 611164254}
   m_Layer: 0
   m_Name: SoundManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1491807836}
   SFXSource: {fileID: 2002980888}
-  background: {fileID: 8300000, guid: 8ff2859fa087e144a98805696f6f80d9, type: 3}
+  background: {fileID: 8300000, guid: b904613cd03871c4f9598f75e9753203, type: 3}
   click: {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
   attack: {fileID: 0}
   boom: {fileID: 0}
@@ -869,6 +869,7 @@ MonoBehaviour:
   Bubble: {fileID: 0}
   Jungle: {fileID: 0}
   Sea: {fileID: 0}
+  transitionTime: 2
 --- !u!1 &656450488
 GameObject:
   m_ObjectHideFlags: 0
