@@ -58,7 +58,7 @@ public class LobbyScenario : MonoBehaviour
         {
             circle.SetActive(false);
         }
-        StartCoroutine(FadeUI(1f, 0f, logoPanel.GetComponent<CanvasGroup>()));
+        StartCoroutine(FadeUI(0.5f, 0f, logoPanel.GetComponent<CanvasGroup>()));
     }
     IEnumerator AfterFade()
     {
