@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class pause : MonoBehaviour
+public class OptionContoller : MonoBehaviour
 {
     // 다른 스크립트에서 쉽게 접근이 가능하도록 static
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuCanvas;
-    public GameObject panel;
-    public GameObject SoundSet;
+    public GameObject optionPanel;
+    public GameObject optionMenu;
+    public GameObject soundMenu;
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,32 +27,30 @@ public class pause : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuCanvas.SetActive(false);
-        panel.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     public void Pause()
     {
-        pauseMenuCanvas.SetActive(true);
-        panel.SetActive(true);
+        optionMenu.SetActive(true);
+        soundMenu.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
 
-    public void ToSettingMenu()
+    public void OnClickSoundButton()
     {
-        SoundSet.SetActive(true);
-        pauseMenuCanvas.SetActive(false);
+        soundMenu.SetActive(true);
+        optionMenu.SetActive(false);
     }
-    public void BackBtn()
+    public void OnClickBackButton()
     {
-        SoundSet.SetActive(false);
-        pauseMenuCanvas.SetActive(true);
+        soundMenu.SetActive(false);
+        optionMenu.SetActive(true);
     }
 
-    public void ToMain()
+    public void GoToMain()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main");
