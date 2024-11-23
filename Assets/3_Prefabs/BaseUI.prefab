@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 5522813132212297745}
   - component: {fileID: 6019742456144672349}
   - component: {fileID: 6508536635178316837}
+  - component: {fileID: 8402385577550906811}
   m_Layer: 5
   m_Name: ChallengeButton
   m_TagString: Untagged
@@ -174,7 +175,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
@@ -274,6 +275,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   themeInfoText: {fileID: 0}
+--- !u!114 &8402385577550906811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144009780825885418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d80d90877cc4442a4f3ecd5a4a7bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: 1
+  maxScale: 1.2
+  duration: 0.2
 --- !u!1 &233970635004612841
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,6 +5451,7 @@ GameObject:
   - component: {fileID: 1786569674678397897}
   - component: {fileID: 734450460956501273}
   - component: {fileID: 5708507555732977133}
+  - component: {fileID: 5482546592007913732}
   m_Layer: 5
   m_Name: OptionButton
   m_TagString: Untagged
@@ -5518,7 +5535,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
@@ -5555,6 +5572,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5482546592007913732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8130691446146730254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d80d90877cc4442a4f3ecd5a4a7bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: 1
+  maxScale: 1.2
+  duration: 0.2
 --- !u!1 &8434244779514327146
 GameObject:
   m_ObjectHideFlags: 0

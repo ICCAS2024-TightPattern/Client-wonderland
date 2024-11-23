@@ -2,38 +2,50 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MouseHoverUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MouseHoverUI : MonoBehaviour, IPointerExitHandler, IPointerDownHandler, IPointerEnterHandler
 {
     [Header("Scale Settings")]
     public float minScale = 1.0f;      // 기본 스케일
     public float maxScale = 1.2f;      // 호버 시 최대 스케일
     public float duration = 0.2f;        // 애니메이션 지속 시간
 
-    private Coroutine hoverCoroutine;   // 현재 실행 중인 코루틴
-    private bool isHovered = false;    // 현재 호버 상태
+    private Coroutine coroutine;   // 현재 실행 중인 코루틴
+    private bool isPointerDown = false;    // 현재 호버 상태
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (!isPointerDown)
+        {
+            if (coroutine != null)
+                StopCoroutine(coroutine);
+
+            coroutine = StartCoroutine(PointerHoverAnimation(true));
+        }
+        isPointerDown = true;
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!isHovered)
+        if (!isPointerDown)
         {
-            if (hoverCoroutine != null)
-                StopCoroutine(hoverCoroutine);
+            if (coroutine != null)
+                StopCoroutine(coroutine);
 
-            hoverCoroutine = StartCoroutine(PointerHoverAnimation(true));
+            coroutine = StartCoroutine(PointerHoverAnimation(true));
         }
-        isHovered = true;
+        isPointerDown = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isHovered)
+        if (isPointerDown)
         {
-            if (hoverCoroutine != null)
-                StopCoroutine(hoverCoroutine);
+            if (coroutine != null)
+                StopCoroutine(coroutine);
 
-            hoverCoroutine = StartCoroutine(PointerHoverAnimation(false));
+            coroutine = StartCoroutine(PointerHoverAnimation(false));
         }
-        isHovered = false;
+        isPointerDown = false;
     }
 
     IEnumerator PointerHoverAnimation(bool isEntering)
@@ -65,7 +77,7 @@ public class MouseHoverUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         // 애니메이션 종료 후 정확한 스케일 설정
         rectTransform.localScale = new Vector3(targetScale, targetScale, targetScale);
-        hoverCoroutine = null;
+        coroutine = null;
     }
 
     /// <summary>
