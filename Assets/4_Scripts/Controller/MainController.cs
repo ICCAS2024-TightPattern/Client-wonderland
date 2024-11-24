@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class MainController : MonoBehaviour
 {
-    [Header("각 화면의 그룹 오브젝트 (메인/맵/상점/가방 순서)")]
-    [SerializeField] private GameObject[] modelGroup;
-    [SerializeField] private GameObject[] UIGroup;
+    [Header("메인 활성 오브젝트")]
+    public GameObject[] enableInMain;
+
+    [Header("맵 활성 오브젝트")]
+    public GameObject[] enableInMap;
+
+    [Header("상점 활성 오브젝트")]
+    public GameObject[] enableInStore;
+
+    [Header("가방 활성 오브젝트")]
+    public GameObject[] enableInBackpack;
 
     private MainSceneGroupName currentGroup = MainSceneGroupName.Main;
 
@@ -14,20 +22,8 @@ public class MainController : MonoBehaviour
     void Start()
     {
         // 메인만 켜기
-        if (modelGroup[0] == null || UIGroup[0] == null)
-        {
-            Debug.LogError("컨트롤러에 오브젝트 그룹을 연결해주세요.");
-            return;
-        }
-        modelGroup[0].SetActive(true);
-        UIGroup[0].SetActive(true);
-        for (int i = 1; i < modelGroup.Length; i++)
-        {
-            if (modelGroup[i] != null)
-                modelGroup[i].SetActive(false);
-            if (UIGroup[i] != null)
-                UIGroup[i].SetActive(false);
-        }
+        foreach (GameObject obj in enableInMain)
+            obj.SetActive(true);
     }
 
     // Update is called once per frame
@@ -38,22 +34,48 @@ public class MainController : MonoBehaviour
 
     public void ChangeGroup(int group)
     {
-        currentGroup = (MainSceneGroupName)group;
-        for (int i = 0; i < modelGroup.Length; i++)
+        // 먼저 켜져있던 이전 씬 오브젝트들 끄고,
+        switch (currentGroup)
         {
-            if (modelGroup[i] == null) 
-                continue;
-            modelGroup[i].SetActive(false);
-            if (group == i)
-                modelGroup[i].SetActive(true);
+            case MainSceneGroupName.Main:
+                foreach (GameObject obj in enableInMain)
+                    obj.SetActive(false);
+                break;
+            case MainSceneGroupName.Map:
+                foreach (GameObject obj in enableInMap)
+                    obj.SetActive(false);
+                break;
+            case MainSceneGroupName.Store:
+                foreach (GameObject obj in enableInStore)
+                    obj.SetActive(false);
+                break;
+            case MainSceneGroupName.Backpack:
+                foreach (GameObject obj in enableInBackpack)
+                    obj.SetActive(false);
+                break;
         }
-        for (int i = 0; i < UIGroup.Length; i++)
+
+        currentGroup = (MainSceneGroupName)group;
+
+        // 그리고 켜야될 것들 키기
+        switch (currentGroup)
         {
-            if (UIGroup[i] == null)
-                continue;
-            UIGroup[i].SetActive(false);
-            if (group == i)
-                UIGroup[i].SetActive(true);
+            case MainSceneGroupName.Main:
+                foreach (GameObject obj in enableInMain)
+                    obj.SetActive(true);
+                break;
+            case MainSceneGroupName.Map:
+                foreach (GameObject obj in enableInMap)
+                    obj.SetActive(true);
+                break;
+            case MainSceneGroupName.Store:
+                foreach (GameObject obj in enableInStore)
+                    obj.SetActive(true);
+                break;
+            case MainSceneGroupName.Backpack:
+                foreach (GameObject obj in enableInBackpack)
+                    obj.SetActive(true);
+                break;
         }
     }
 }
